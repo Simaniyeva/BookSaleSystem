@@ -1,0 +1,46 @@
+﻿@model BookViewModel
+@{
+    ViewData["Title"] = "AdminOperations";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h1 class=" alert-light text-center" style="font-size:58px">Admin Operations</h1>
+
+</div>
+
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Book Name</th>
+            <th scope="col">Author</th>
+            <th scope="col">Count</th>
+            <th scope="col">Price</th>
+            <th scope="col">Operations</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model.Books)
+    {
+        <tbody>
+            <tr>
+                <td>@item.BookId</td>
+                <td>@item.BookName</td>
+                <td>@item.About</td>
+                <td>@item.Count</td>
+                <td>@item.Price</td>
+                <td>
+
+
+                    <a href="/Home/UpdateBook/@item.BookId" class="btn btn-outline-info m-auto">Update Book</a>
+                    <a href="/Home/DeleteBook/@item.BookId" class="btn btn-outline-info m-auto">Delete Book</a>
+
+                </td>
+            </tr>
+
+        </tbody>
+    }
+
+
+</table>

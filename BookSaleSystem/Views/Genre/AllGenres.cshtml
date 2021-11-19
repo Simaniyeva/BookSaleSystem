@@ -1,0 +1,41 @@
+﻿@model BookViewModel
+@{
+    ViewData["Title"] = "AllGenres";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+
+
+<div class="row m-auto p-5">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Genre Name</th>
+                <th scope="col">Operation</th>
+            </tr>
+        </thead>
+        @foreach (var item in Model.Genres)
+        {
+            <tbody>
+                <tr>
+                    <td>@item.GenreId</td>
+                    <td>@item.GenreName</td>
+                    <td>
+                        <a href="/Genre/GetGenre/@item.GenreId" class="btn btn-outline-info m-auto">Get BOOKS</a>
+                        <a href="/Genre/DeleteGenre/@item.GenreId" class="btn btn-outline-info m-auto " id="delete">Delete</a>
+                    </td>
+
+                </tr>
+
+            </tbody>
+        }
+
+    </table>
+    <a href="/Genre/AddGenre" class="btn btn-outline-success my-2 my-sm-0 mr-5" type="submit">ADD GENRE</a>
+
+</div>

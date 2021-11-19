@@ -1,0 +1,39 @@
+﻿@model BookViewModel
+@{
+    ViewData["Title"] = "DeleteBook";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container mt-5">
+    <h1 class=" alert-light text-center" style="font-size:58px">DELETE BOOK</h1>
+
+</div>
+
+
+<div class="row d-flex justify-content-center">
+    <div class="col-lg-4 text-center p-4 m-5  d-flex justify-content-center  ">
+
+        @using (Html.BeginForm("DeleteBook", "Home", FormMethod.Post))
+        {
+            @Html.Label("Kitabın ID")
+            @Html.TextBoxFor(I => I.Book.BookId, new { @class = "form-control" })
+            @Html.Label("Kitabın adı")
+            @Html.TextBoxFor(I => I.Book.BookName, new { @class = "form-control" })
+
+            @Html.Label("Müəllif:")
+            @Html.TextBoxFor(I => I.Book.About, new { @class = "form-control" })
+
+            @Html.Label("Qiymət")
+            @Html.TextBoxFor(I => I.Book.Price, new { @class = "form-control" })
+
+            @Html.Label("Kitabın sayı")
+            @Html.TextBoxFor(I => I.Book.Count, new { @class = "form-control" })
+
+            @Html.Label("Kitabın Janrı")
+            @Html.TextBoxFor(I => I.Book.GenreId, new { @class = "form-control" })
+
+            <button class="btn btn-outline-info mt-3">Delete Book</button>
+        }
+    </div>
+</div>

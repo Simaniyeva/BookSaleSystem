@@ -1,0 +1,23 @@
+﻿@model BookViewModel
+@{
+    ViewData["Title"] = "AddGenre";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row d-flex justify-content-center">
+    <div class="col-lg-4 text-center p-4 m-5  d-flex justify-content-center  ">
+
+        @using (Html.BeginForm("AddGenre", "Genre", FormMethod.Post))
+        {
+
+            @Html.Label("Genre Name")
+            @Html.TextBoxFor(I => I.Genre.GenreName, new { @class = "form-control" })
+
+            <button class="btn btn-outline-info mt-3">Add Genre</button>
+
+        }
+
+
+    </div>
+</div>
